@@ -1,0 +1,17 @@
+.page {
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.footerLink {
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.footerLink:hover {
+  transform: translateX(2px);
+}

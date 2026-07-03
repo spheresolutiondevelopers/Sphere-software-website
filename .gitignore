@@ -1,0 +1,19 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+
+# Vite / React app
+.vite/
+
+# Env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor folders
+.vscode/
+.idea/
