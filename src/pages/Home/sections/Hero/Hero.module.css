@@ -1,0 +1,448 @@
+/* ============================================================
+   Hero.module.css – complete styles for Hero section
+   matches the HTML design exactly
+   ============================================================ */
+
+/* ---- Layout grid (same as HTML) ---- */
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  grid-template-rows: auto auto;
+  column-gap: 32px;
+  row-gap: 0;
+  align-items: start;
+  padding: 14px 0 24px;
+}
+
+.heroTitle {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: left;
+  align-self: start;
+}
+
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  align-self: start;
+}
+
+/* ---- Screenshots slideshow ---- */
+.heroProductShots {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.hpsSlide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.65s ease;
+  pointer-events: none;
+}
+.hpsSlide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hpsCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.07));
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.hpsCard:hover {
+  border-color: var(--border2, rgba(0, 0, 0, 0.12));
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hpsHdr {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.07));
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--ink, #111827);
+}
+.hpsIco {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+.hpsTag {
+  margin-left: auto;
+  font-size: 8px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 99px;
+  background: var(--bg2, #f3f4f6);
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.07));
+  color: var(--ink3, #9ca3af);
+}
+
+.hpsBody {
+  flex: 1;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.hpsMonth {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--ink3, #9ca3af);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+.hpsSlots {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-height: 0;
+}
+.hpsSlot {
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hpsOn {
+  background: rgba(124, 108, 248, 0.12);
+  color: #9b8dfa;
+  border-left: 2px solid #7c6cf8;
+}
+.hpsOn.c2 {
+  background: rgba(78, 205, 196, 0.1);
+  color: #4ecdc4;
+  border-left-color: #4ecdc4;
+}
+.hpsOn.c3 {
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff8a80;
+  border-left-color: #ff6b6b;
+}
+.hpsOff {
+  background: var(--bg2, #f3f4f6);
+  min-height: 14px;
+}
+
+.hpsMsRow {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border, rgba(0, 0, 0, 0.07));
+}
+.hpsMs {
+  text-align: center;
+  flex: 1;
+}
+.hpsMsN {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.hpsMsL {
+  font-size: 7px;
+  color: var(--ink3, #9ca3af);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.hpsChart {
+  background: var(--bg2, #f3f4f6);
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.hpsPairs {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+.hpsPair {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: var(--bg2, #f3f4f6);
+  font-size: 8px;
+}
+.hpsPn {
+  font-weight: 700;
+  flex: 1;
+}
+.hpsPp {
+  color: var(--ink2, #4b5563);
+  font-size: 8px;
+}
+.hpsPc {
+  font-weight: 700;
+  font-size: 8px;
+}
+.hpsPos {
+  color: #4ecdc4;
+}
+.hpsNeg {
+  color: #ff6b6b;
+}
+.hpsSig {
+  font-size: 7.5px;
+  font-weight: 600;
+  margin-top: 3px;
+  padding: 4px 7px;
+  border-radius: 4px;
+  background: rgba(78, 205, 196, 0.07);
+  border: 1px solid rgba(78, 205, 196, 0.2);
+  color: rgba(78, 205, 196, 0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- Text block (subtitles, buttons, stats) ---- */
+.heroTextBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroRotateWrap {
+  position: relative;
+  min-height: 56px;
+  margin-bottom: 8px;
+}
+.heroSubMsg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 450ms ease, transform 450ms ease;
+  pointer-events: none;
+  font-size: 15px;
+  color: var(--ink2, #4b5563);
+  line-height: 1.65;
+  width: 100%;
+}
+.heroSubMsg.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.heroSubDots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.heroSubDot {
+  height: 5px;
+  width: 5px;
+  border-radius: 99px;
+  background: var(--ink3, #9ca3af);
+  transition: width 350ms cubic-bezier(0.4, 0, 0.2, 1), background 350ms;
+  cursor: pointer;
+}
+.heroSubDot.active {
+  width: 20px;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+}
+
+.heroBtns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.heroStats {
+  display: flex;
+  gap: 24px;
+}
+
+/* ---- Orbital wrapper and canvas ---- */
+.orbitalWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.platformOrbWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  flex-shrink: 1;
+  overflow: visible;
+  transform: perspective(1400px) rotateY(7deg) rotateX(-1deg);
+  transition: transform 0.4s ease;
+  margin-bottom: -18%;
+  cursor: grab;
+}
+.platformOrbWrap:hover {
+  transform: perspective(1400px) rotateY(3deg) rotateX(0deg);
+}
+.platformOrbWrap:active {
+  cursor: grabbing;
+}
+
+.orbCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 20px;
+  pointer-events: all;
+}
+
+/* ---- Orbital description panel ---- */
+.orbDescPanel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(14, 12, 30, 0.92);
+  border: 1px solid rgba(124, 108, 248, 0.22);
+  border-radius: 14px;
+  padding: 10px 16px;
+  backdrop-filter: blur(18px);
+  width: 100%;
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+}
+.orbDescIconWrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  background: rgba(124, 108, 248, 0.12);
+  border: 1px solid rgba(124, 108, 248, 0.22);
+}
+.orbDescContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+.orbDescTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(155, 141, 250, 0.95);
+}
+.orbDescText {
+  font-size: 11px;
+  color: rgba(160, 162, 210, 0.9);
+  line-height: 1.5;
+}
+
+/* ---- Responsive overrides (match HTML breakpoints) ---- */
+@media (max-width: 1024px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    text-align: center;
+    padding: 28px 0 44px;
+  }
+  .heroTitle {
+    order: 0;
+    grid-column: 1;
+    text-align: center;
+  }
+  .heroRight {
+    order: 1;
+    display: flex !important;
+    align-items: center;
+  }
+  .heroLeft {
+    order: 2;
+    text-align: center;
+  }
+  .platformOrbWrap {
+    transform: none !important;
+    margin-bottom: 0 !important;
+  }
+  .heroBtns {
+    justify-content: center;
+  }
+  .heroStats {
+    justify-content: center;
+  }
+  .heroSubDots {
+    justify-content: center;
+  }
+  .heroSubMsg {
+    text-align: center;
+  }
+  .heroProductShots {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-h1 {
+    font-size: clamp(24px, 7vw, 38px) !important;
+    white-space: normal !important;
+  }
+  .heroBtns {
+    flex-wrap: nowrap !important;
+  }
+  .heroBtns button {
+    flex: 1;
+    justify-content: center;
+    padding: 11px 14px;
+    font-size: 13px;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* extra small adjustments if needed */
+}

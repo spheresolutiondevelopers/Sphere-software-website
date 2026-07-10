@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card } from '@/components/common';
-import { Hero } from './sections/Hero.jsx';
+import { Hero } from './sections/Hero';  // or './sections/Hero/index'
 import { Products } from './sections/Products.jsx';
 import { WhatNew } from './sections/WhatNew.jsx';
 import { Contact } from './sections/Contact.jsx';
